@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Список</h2>
+    {# вывод данных из базы #}
+<table>
+    <tr><th>ID</th><th>Модель</th> <th>Производитель</th> <th>Дата выпуска</th> <th>Гос. номер</th></tr>
+    {% for one in database %}
+        <tr>
+
+        <td>{{ stamp }}</td>
+        <td>{{ manufacturer }}</td>
+        <td>{{ release_date }}</td>
+        <td>{{ state_number }}</td>
+        <td><a href="{% url 'del' one.id %}">удалить</a></td>
+        </tr>
+    {%  endfor %}
+</table>
+</body>
+</html>
